@@ -1,0 +1,53 @@
+@use "../../dirs/mixins" as mix;
+
+.hostWrapper{
+    display: flex;
+    justify-content: space-around;
+    gap: 2em;
+
+    .hostImage{
+        @include mix.maxWidth(400px);
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    .hostInfo{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        @include mix.maxWidth(600px);
+
+        h1{
+            font-size: clamp(1.5em, 5vw + 1.2em, 5.2em);
+        }
+
+        a{
+            color: #000;
+            position: relative;
+
+            &::after{
+                content: '';
+                height: 1px;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: #000;
+            }
+        }
+
+        &About{
+            font-size: 1.05em;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hostWrapper{
+        flex-direction: column;
+    }
+}

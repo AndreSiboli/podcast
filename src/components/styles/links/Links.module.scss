@@ -1,0 +1,50 @@
+.underline {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: black;
+    }
+
+    &.black::after{
+        background-color: black;
+    }
+
+    &.white::after{
+        background-color: white;
+    }
+}
+
+.underlineGrowUp{
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 1px;
+        width: 0;
+      
+        transition: .2s ease-in-out;
+    }
+
+    &:hover::after {
+        left: 0;
+        width: 100%;
+    }
+
+    &.black::after{
+        background-color: black;
+    }
+
+    &.white::after{
+        background-color: white;
+    }
+    
+}

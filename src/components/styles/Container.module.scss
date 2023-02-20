@@ -1,0 +1,17 @@
+@use "../../dirs/mixins" as mix;
+
+.Container{
+    @include mix.maxWidth(1200px);
+    height: 100%;
+    margin: 0 auto;
+
+    &.spacing{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &.center{
+        @include mix.flexCenter;
+    }
+}

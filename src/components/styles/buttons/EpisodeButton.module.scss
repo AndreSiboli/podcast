@@ -1,0 +1,20 @@
+.episodeButton{
+    display: flex;
+    gap: 1em;
+    color: #000;
+    font-size: calc(0.8em + 1vw);
+
+    .arrow{
+        display: flex;
+        align-items: center;
+    }
+
+    &.invert{
+        flex-direction: row-reverse;
+    }
+
+    &.invert .arrow{
+        transform: rotate(180deg);
+    }
+
+}

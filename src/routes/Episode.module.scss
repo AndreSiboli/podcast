@@ -1,0 +1,81 @@
+@use '../dirs/variables';
+
+.episodeSection{
+    padding: 5em 2em;
+    padding-top: 10em;
+
+    .episodeContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 2.5em;
+
+        .episodeInfo{
+            display: flex;
+            justify-content: space-between;
+            gap: 2em;
+
+
+            .episodeImage{
+                max-width: 400px;
+                width: 100%;
+            }
+
+            &Wrapper{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                max-width: 650px;
+                width: 100%;
+
+                .episodeInfoAbout{
+
+                    p{
+                        font-size: 1.05em;
+                    }
+                }
+
+                .episodeInfoPlayer{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1em;
+                }
+            }
+        }
+
+        .buttonEpisode{
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 4em;
+
+            &.right{
+                justify-content: flex-end;
+            }
+
+            &.left{
+                justify-content: flex-start;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .episodeSection{
+
+        .episodeContainer{
+            
+            h1{
+                text-align: center;
+            }
+
+            .episodeInfo{
+                flex-direction: column;
+                align-items: center;
+
+                &Wrapper{
+                    gap: 4em;
+                }
+            }
+        }
+    }
+}

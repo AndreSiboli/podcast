@@ -1,0 +1,43 @@
+@use "../../../dirs/mixins" as mix;
+
+.episodeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    color: #000;
+    
+
+    .episodeImage {
+        width: 100%;
+    }
+
+    .episodeInfos {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+
+        .buttonContainer {
+            @include mix.maxWidth(150px);
+        }
+    }
+
+    .episodeDate {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        h2 {
+            font-size: 2.3em;
+            font-weight: 500;
+        }
+    }
+}

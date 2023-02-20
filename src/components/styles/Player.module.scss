@@ -1,0 +1,22 @@
+.playerContainer{
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+   
+    .player,
+    .playerInfo{
+        padding: 1.2em ;
+    }
+
+    .player{
+        border-right: 1px solid #111;
+
+        &.invalid{
+            color: rgba(255, 255, 255, 0.330);
+            cursor: not-allowed;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+@use "../dirs/variables";
+
+.aboutContainer{
+    min-height: 650px;
+    
+    background-color: variables.$primary-color;
+    color: #fff;
+    padding: 4em 2em;
+    padding-top: 10em;
+
+    .aboutWrapper{
+        display: flex;
+        justify-content: space-between;
+        gap: 2em;
+
+        .aboutInfos{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5em;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .linksContainer{
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            width: 500px;
+        }
+
+        .linksWrapper{
+            display: flex;
+            flex-direction: column;
+
+            p{
+                font-size: 1.05em;
+            }
+
+            a{  
+                display: block;
+                color: variables.$secondary-color;
+                position: relative;
+                width: fit-content;
+                transition: color .2s ease-in-out;
+                font-size: 0.9em;
+                
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: variables.$secondary-color;
+                }
+        
+                &:hover{
+                    color: #fff;
+                }
+        
+                &:hover::after{
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.hostSection{
+    padding: 5em 2em;
+
+    .hostContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 7em;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .aboutContainer{
+        
+        .aboutWrapper{
+            flex-direction: column;
+            gap: 5em;
+
+            .linksContainer{
+                justify-content: flex-start;
+                width: 100%;
+            }
+        }
+        
+    }
+}
