@@ -7,10 +7,14 @@
     position: fixed;
     top: 0;
     z-index: 90;
-    transition: transform 0.3s ease-in-out;
+    transition: .3s transform ease-in-out, .3s padding ease-in-out;
 
     &.hidden {
         transform: translateY(-140px);
+    }
+
+    &.nonTop{
+        padding: 1.8em 1.5em;
     }
 
     &.blueish {

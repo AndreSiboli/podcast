@@ -9,9 +9,10 @@ import Container from '../styles/Container';
 
 export default function Navbar() {
     const [active, setActive] = useState(false);
+    const [hiddenNav, setHiddenNav] = useState(false);
+    const [isTopNav, setIsTopNav] = useState(true);
     const [currentPage, setCurrentPage] = useState('');
     const [currentScroll, setCurrentScroll] = useState(0);
-    const [hiddenNav, setHiddenNav] = useState(false);
 
     const { pathname } = useLocation();
 
@@ -26,18 +27,24 @@ export default function Navbar() {
     });
 
     useEffect(() => {
-        setCurrentPage(pathname);
-        if(active) handleMenu()
+        const path = pathname.endsWith('/')
+            ? pathname.substring(0, pathname.length - 1)
+            : pathname;
+        setCurrentPage(path);
+        if (active) handleMenu();
     }, [pathname]);
 
     useEffect(() => {
         window.addEventListener('scroll', function cancel() {
             const scroll = window.pageYOffset;
 
-            if(window.innerWidth <= 768 && active){
-                setHiddenNav(false)
-                return
-            } 
+            if (scroll <= 200) setIsTopNav(true);
+            else setIsTopNav(false);
+
+            if (window.innerWidth <= 768 && active) {
+                setHiddenNav(false);
+                return;
+            }
 
             if (scroll >= currentScroll) {
                 setHiddenNav(true);
@@ -55,10 +62,11 @@ export default function Navbar() {
             ? 'blueish'
             : 'white';
     const visibilityNav = hiddenNav ? 'hidden' : '';
+    const topNav = !isTopNav ? 'nonTop' : '';
 
     return (
         <header
-            className={`${styles.header} ${styles[colorPage]} ${styles[visibilityNav]}`}
+            className={`${styles.header} ${styles[colorPage]} ${styles[visibilityNav]} ${styles[topNav]}`}
         >
             <Container customClass="spacing">
                 <div className={styles.headerLogo}>
